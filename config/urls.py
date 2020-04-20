@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import include, path
 from django.views.generic.base import RedirectView
 
+
 urlpatterns = [
     path("auth/", include("authbroker_client.urls", namespace="authbroker")),
     path("", include("core.urls")),  # default to core with no path

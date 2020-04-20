@@ -20,7 +20,7 @@ django-extensions==2.1.2
 django-filter==2.0.0
 django-import-export==1.1.0
 django-pivot==1.7
-django-staff-sso-client==0.3.1
+#django-staff-sso-client==0.3.1
 django-storages==1.7.1
 django-tables2==v2.1.1
 django-tablib==3.2
