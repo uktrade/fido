@@ -496,7 +496,7 @@ class SlowView(
 
     def square_value(self):
         x = int(self.request.GET.get("x", 1))
-        raw_query = f"SELECT pg_sleep(30); SELECT {x} ^ 2;"
+        raw_query = f"SELECT pg_sleep(10); SELECT {x} ^ 2;"
 
         cursor = connection.cursor()
         cursor.execute(raw_query)
