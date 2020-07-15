@@ -5,7 +5,7 @@ import re
 from django.conf import settings
 from django.contrib.auth.mixins import UserPassesTestMixin
 from django.core.exceptions import PermissionDenied
-from django.db import transaction
+from django.db import connection, transaction
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.urls import (
@@ -487,3 +487,18 @@ class ErrorView(
 ):
     def dispatch(self, request, *args, **kwargs):
         1 / 0
+
+
+class SlowView(
+    TemplateView,
+):
+    template_name = "forecast/edit/slow.html"
+
+    def square_value(self):
+        x = int(self.request.GET.get("x", 1))
+        raw_query = f"SELECT pg_sleep(30); SELECT {x} ^ 2;"
+
+        cursor = connection.cursor()
+        cursor.execute(raw_query)
+        row = cursor.fetchone()
+        return row[0]

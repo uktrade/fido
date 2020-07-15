@@ -8,6 +8,7 @@ from forecast.views.edit_forecast import (
     EditUnavailableView,
     ErrorView,
     PasteForecastRowsView,
+    SlowView,
 )
 from forecast.views.export.mi_report_source import (
     export_mi_budget_report,
@@ -62,6 +63,7 @@ from forecast.views.view_forecast.project_details import (
 
 
 urlpatterns = [
+    path("slow/", SlowView.as_view(), name="slow"),
     path("error/", ErrorView.as_view(), name="error"),
     path(
         "edit/<int:cost_centre_code>/", EditForecastView.as_view(), name="edit_forecast"

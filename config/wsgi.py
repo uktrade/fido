@@ -11,6 +11,12 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
+# from gevent import monkey
+# from psycogreen.gevent import patch_psycopg
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings.prod")
+
+# monkey.patch_all()
+# patch_psycopg()
 
 application = get_wsgi_application()
