@@ -47,7 +47,7 @@ et-xmlfile==1.0.1
 flake8==3.5.0
 flake8-import-order==0.18
 future==0.18.2
-get==1.0.3
+get
 gunicorn==19.9.0
 idna==2.7
 importlib-metadata==1.6.0
