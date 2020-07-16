@@ -53,7 +53,7 @@ et-xmlfile==1.0.1         # via -r requirements.in/base.in, openpyxl
 flake8-import-order==0.18  # via -r requirements.in/base.in
 flake8==3.5.0             # via -r requirements.in/base.in
 future==0.18.2            # via -r requirements.in/base.in
-gevent==20.6.2            # via -r requirements.in/base.in
+gevent==20.6.2            # via -r requirements.in/production.in
 greenlet==0.4.16          # via gevent
 gunicorn==19.9.0          # via -r requirements.in/base.in
 idna==2.7                 # via -r requirements.in/base.in, requests
@@ -77,6 +77,7 @@ pexpect==4.4.0            # via -r requirements.in/base.in, ipython
 pickleshare==0.7.4        # via -r requirements.in/base.in, ipython
 pluggy==0.13.1            # via -r requirements.in/base.in
 prompt-toolkit==1.0.15    # via -r requirements.in/base.in, ipython
+psycogreen==1.0.2         # via -r requirements.in/production.in
 psycopg2-binary==2.7.4    # via -r requirements.in/base.in
 psycopg2==2.7.4           # via -r requirements.in/base.in
 ptyprocess==0.5.2         # via -r requirements.in/base.in, pexpect
