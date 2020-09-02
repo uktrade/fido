@@ -382,6 +382,8 @@ class LogEntryAdmin(AdminReadOnly, AdminExport):
         "user",
         "content_type",
         "action_flag_",
+        "object_id",
+        "object_repr",
         "change_message",
     ]
 
@@ -403,6 +405,6 @@ admin.site.register(LogEntry, LogEntryAdmin)
 admin.site.register(FinancialYear)
 
 admin.site.unregister(User)
-admin.site.unregister(Group)
+# admin.site.unregister(Group)
 
 admin.site.register(User, UserAdmin)
