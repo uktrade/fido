@@ -405,6 +405,6 @@ admin.site.register(LogEntry, LogEntryAdmin)
 admin.site.register(FinancialYear)
 
 admin.site.unregister(User)
-# admin.site.unregister(Group)
+admin.site.unregister(Group)
 
 admin.site.register(User, UserAdmin)
