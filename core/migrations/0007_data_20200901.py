@@ -13,29 +13,17 @@ def add_all_permissions():
         app_config.models_module = None
 
 
-def assign_permissions(group, permission_codenames):
-    for permission_codename in permission_codenames:
-        permission = Permission.objects.get(
-            codename=permission_codename,
-        )
-        group.permissions.add(
-            permission,
-        )
-
-
 def add_finance_admin_permissions(apps, schema_editor):
     add_all_permissions()
-
     # Finance admins
     finance_adminstrators, _ = Group.objects.get_or_create(
         name='Finance Administrator',
     )
-
-    assign_permissions(
-        finance_adminstrators, [
-            # admin permissions follow
-            "view_logentry"
-        ],
+    permission = Permission.objects.get(
+        codename="view_logentry",
+    )
+    finance_adminstrators.permissions.add(
+        permission,
     )
 
 
